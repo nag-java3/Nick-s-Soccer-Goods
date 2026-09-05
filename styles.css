@@ -1,0 +1,163 @@
+/* =========================================
+   EXTERNAL CSS
+   Nick's Soccer Goods
+   ========================================= */
+
+
+/* BASIC PAGE STYLING */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+    color: #222;
+}
+
+
+/* HEADER */
+
+header {
+    background-color: #176b2c;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+header p {
+    margin-bottom: 0;
+}
+
+
+/* NAVIGATION BAR */
+
+nav {
+    background-color: #222;
+    text-align: center;
+    padding: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #8be28f;
+}
+
+
+/* MAIN CONTENT */
+
+main {
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+
+/* SECTIONS */
+
+section {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+
+/* SECTION HEADINGS */
+
+section h2 {
+    color: #176b2c;
+}
+
+
+/* IMAGES */
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
+
+
+/* PRODUCTS */
+
+#products {
+    text-align: center;
+}
+
+
+/* ARTICLES */
+
+article {
+    background-color: #f1f8f2;
+    display: inline-block;
+    vertical-align: top;
+    width: 27%;
+    margin: 1%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+article h3 {
+    color: #176b2c;
+}
+
+
+/* ASIDE */
+
+aside {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-left: 5px solid #176b2c;
+}
+
+aside h2 {
+    color: #176b2c;
+}
+
+
+/* CONTACT */
+
+#contact {
+    text-align: center;
+}
+
+
+/* FOOTER */
+
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+
+/* MOBILE SCREEN */
+
+@media (max-width: 700px) {
+
+    article {
+        display: block;
+        width: auto;
+        margin: 15px 0;
+    }
+
+    nav a {
+        display: block;
+        margin: 10px;
+    }
+
+}
