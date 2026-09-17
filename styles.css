@@ -41,10 +41,10 @@ HEADER / JUMBOTRON
 ========================================= */
 
 header {
-background-color: #176b2c !important;
-color: white;
-text-align: center;
-padding: 40px !important;
+    background-color: #176b2c !important;
+    color: white !important;
+    text-align: center;
+    padding: 40px !important;
 }
 
 header h1 {
