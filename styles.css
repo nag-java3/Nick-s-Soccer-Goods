@@ -1,163 +1,228 @@
 /* =========================================
-   EXTERNAL CSS
-   Nick's Soccer Goods
-   ========================================= */
+EXTERNAL CSS
+Nick's Soccer Goods
+Bootstrap Exercise
+========================================= */
 
-
-/* BASIC PAGE STYLING */
+/* =========================================
+BASIC PAGE STYLING
+========================================= */
 
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background-color: #f4f4f4;
-    color: #222;
+font-family: Arial, sans-serif;
+margin: 0;
+background-color: #f4f4f4;
+color: #222;
 }
 
+/* =========================================
+BOOTSTRAP NAVBAR
+========================================= */
 
-/* HEADER */
+.navbar {
+background-color: #222 !important;
+}
+
+.navbar-brand {
+font-weight: bold;
+}
+
+.navbar .nav-link {
+color: white !important;
+font-weight: bold;
+}
+
+.navbar .nav-link:hover {
+color: #8be28f !important;
+}
+
+/* =========================================
+HEADER / JUMBOTRON
+========================================= */
 
 header {
-    background-color: #176b2c;
-    color: white;
-    text-align: center;
-    padding: 25px;
+background-color: #176b2c !important;
+color: white;
+text-align: center;
+padding: 40px !important;
 }
 
 header h1 {
-    margin: 0;
-    font-size: 32px;
+margin: 0;
+font-size: 32px;
 }
 
 header p {
-    margin-bottom: 0;
+margin-bottom: 0;
 }
 
-
-/* NAVIGATION BAR */
-
-nav {
-    background-color: #222;
-    text-align: center;
-    padding: 15px;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: bold;
-}
-
-nav a:hover {
-    color: #8be28f;
-}
-
-
-/* MAIN CONTENT */
+/* =========================================
+MAIN CONTENT
+========================================= */
 
 main {
-    width: 90%;
-    max-width: 1000px;
-    margin: 20px auto;
+width: 90%;
+max-width: 1000px;
+margin: 20px auto;
 }
 
-
-/* SECTIONS */
+/* =========================================
+SECTIONS
+========================================= */
 
 section {
-    background-color: white;
-    padding: 25px;
-    margin-bottom: 20px;
-    border-radius: 8px;
+background-color: white;
+padding: 25px;
+margin-bottom: 20px;
+border-radius: 8px;
 }
 
-
-/* SECTION HEADINGS */
+/* =========================================
+SECTION HEADINGS
+========================================= */
 
 section h2 {
-    color: #176b2c;
+color: #176b2c;
 }
 
-
-/* IMAGES */
+/* =========================================
+IMAGES
+========================================= */
 
 img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 6px;
+max-width: 100%;
+height: auto;
+border-radius: 6px;
 }
 
+/* Bootstrap responsive images */
 
-/* PRODUCTS */
+.img-fluid {
+max-width: 100%;
+height: auto;
+border-radius: 6px;
+}
+
+/* =========================================
+PRODUCTS
+========================================= */
 
 #products {
-    text-align: center;
+text-align: center;
 }
 
-
-/* ARTICLES */
+/* =========================================
+PRODUCT ARTICLES
+========================================= */
 
 article {
-    background-color: #f1f8f2;
-    display: inline-block;
-    vertical-align: top;
-    width: 27%;
-    margin: 1%;
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+background-color: #f1f8f2;
+width: 100%;
+margin: 0;
+padding: 15px;
+border: 1px solid #ccc;
+border-radius: 8px;
+box-sizing: border-box;
 }
 
 article h3 {
-    color: #176b2c;
+color: #176b2c;
 }
 
+/* Add spacing between the product cards */
 
-/* ASIDE */
+#products .col-md-4 {
+margin-bottom: 20px;
+}
+
+/* =========================================
+ASIDE / SPECIAL OFFER
+========================================= */
 
 aside {
-    background-color: white;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-left: 5px solid #176b2c;
+background-color: white;
+padding: 20px;
+margin-bottom: 20px;
+border-left: 5px solid #176b2c;
 }
 
 aside h2 {
-    color: #176b2c;
+color: #176b2c;
 }
 
+/* =========================================
+SPECIAL OFFER
+========================================= */
 
-/* CONTACT */
+.special-offer {
+background-color: #e8f5e9;
+color: #176b2c;
+padding: 10px;
+text-align: center;
+}
+
+/* =========================================
+CONTACT
+========================================= */
 
 #contact {
-    text-align: center;
+text-align: center;
 }
 
-
-/* FOOTER */
+/* =========================================
+FOOTER
+========================================= */
 
 footer {
-    background-color: #222;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: 30px;
+background-color: #222 !important;
+color: white;
+text-align: center;
+padding: 20px;
+margin-top: 30px;
 }
 
+footer p {
+margin-bottom: 5px;
+}
 
-/* MOBILE SCREEN */
+/* =========================================
+BOOTSTRAP CONTAINER ADJUSTMENTS
+========================================= */
+
+.container {
+max-width: 1000px;
+}
+
+/* =========================================
+MOBILE SCREEN
+========================================= */
 
 @media (max-width: 700px) {
 
-    article {
-        display: block;
-        width: auto;
-        margin: 15px 0;
-    }
+```
+main {
+    width: 95%;
+}
 
-    nav a {
-        display: block;
-        margin: 10px;
-    }
+section {
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 26px;
+}
+
+header {
+    padding: 30px !important;
+}
+
+article {
+    width: 100%;
+}
+
+.navbar-brand {
+    font-size: 18px;
+}
+```
 
 }
