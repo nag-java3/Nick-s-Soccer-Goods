@@ -21,6 +21,7 @@
         <p>Your one-stop shop for soccer gear!</p>
     </header>
 
+
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container">
@@ -35,6 +36,7 @@
                     data-bs-target="#navbarNav">
 
                 <span class="navbar-toggler-icon"></span>
+
             </button>
 
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -108,6 +110,7 @@
                                        id="username"
                                        name="username"
                                        placeholder="Enter your username"
+                                       onfocus="clearMessage(this)"
                                        onfocusout="validate(this)">
 
                             </div>
@@ -125,6 +128,7 @@
                                        id="email"
                                        name="email"
                                        placeholder="Enter your email"
+                                       onfocus="clearMessage(this)"
                                        onfocusout="validate(this)">
 
                             </div>
@@ -142,6 +146,7 @@
                                        id="password"
                                        name="password"
                                        placeholder="Enter your password"
+                                       onfocus="clearMessage(this)"
                                        onfocusout="validate(this)">
 
                             </div>
@@ -159,6 +164,7 @@
                                        id="confirmPassword"
                                        name="confirmPassword"
                                        placeholder="Confirm your password"
+                                       onfocus="clearMessage(this)"
                                        onfocusout="validate(this)">
 
                             </div>
@@ -220,14 +226,29 @@
     <!-- JavaScript Validation -->
     <script>
 
-        // Validate individual fields
+        // Clear an error message when the user clicks
+        // back into the textbox
+        function clearMessage(obj) {
+
+            if (obj.value === "Field is required" ||
+                obj.value === "Invalid email format" ||
+                obj.value === "Passwords do not match") {
+
+                obj.value = "";
+                obj.style.color = "";
+                obj.style.borderColor = "";
+            }
+        }
+
+
+        // Validate the current input field
         function validate(obj) {
 
-            // Get the value entered into the field
+            // Get the value entered by the user
             var value = obj.value.trim();
 
 
-            // Reset the field to its normal appearance
+            // Reset the textbox to normal
             obj.style.color = "";
             obj.style.borderColor = "";
 
@@ -235,8 +256,8 @@
             // Check if the field is empty
             if (value === "") {
 
-                obj.style.color = "red";
-                obj.style.borderColor = "red";
+                obj.value = "Field is required";
+                obj.style.color = "#FF0000";
 
                 return false;
             }
@@ -245,19 +266,20 @@
             // Check email format
             if (obj.id === "email") {
 
-                var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                var emailPattern =
+                    /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
                 if (!emailPattern.test(value)) {
 
-                    obj.style.color = "red";
-                    obj.style.borderColor = "red";
+                    obj.value = "Invalid email format";
+                    obj.style.color = "#FF0000";
 
                     return false;
                 }
             }
 
 
-            // Check that passwords match
+            // Check that the passwords match
             if (obj.id === "confirmPassword") {
 
                 var password =
@@ -265,15 +287,15 @@
 
                 if (value !== password) {
 
-                    obj.style.color = "red";
-                    obj.style.borderColor = "red";
+                    obj.value = "Passwords do not match";
+                    obj.style.color = "#FF0000";
 
                     return false;
                 }
             }
 
 
-            // Field is valid
+            // The field is valid
             obj.style.color = "";
             obj.style.borderColor = "";
 
@@ -281,7 +303,7 @@
         }
 
 
-        // Validate all fields when the form is submitted
+        // Validate every field when Sign Up is clicked
         document.getElementById("signupForm").addEventListener("submit", function(event) {
 
             var username =
@@ -297,7 +319,7 @@
                 document.getElementById("confirmPassword");
 
 
-            // Validate each field
+            // Validate all four fields
             var usernameValid = validate(username);
 
             var emailValid = validate(email);
@@ -308,8 +330,7 @@
                 validate(confirmPassword);
 
 
-            // Stop the form from submitting
-            // if any field is invalid
+            // Prevent submission if any field is invalid
             if (!usernameValid ||
                 !emailValid ||
                 !passwordValid ||
@@ -325,4 +346,3 @@
 
 </body>
 </html>
-```
