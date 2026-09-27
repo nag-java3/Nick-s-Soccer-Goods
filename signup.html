@@ -25,37 +25,53 @@
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container">
-            <a class="navbar-brand" href="storefront.html">Nick's Soccer Goods</a>
 
-            <button class="navbar-toggler" type="button"
+            <a class="navbar-brand" href="storefront.html">
+                Nick's Soccer Goods
+            </a>
+
+            <button class="navbar-toggler"
+                    type="button"
                     data-bs-toggle="collapse"
                     data-bs-target="#navbarNav">
+
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarNav">
+
                 <ul class="navbar-nav ms-auto">
 
                     <li class="nav-item">
-                        <a class="nav-link" href="storefront.html">Home</a>
+                        <a class="nav-link" href="storefront.html">
+                            Home
+                        </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="storefront.html">Products</a>
+                        <a class="nav-link" href="storefront.html">
+                            Products
+                        </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="storefront.html">About Us</a>
+                        <a class="nav-link" href="storefront.html">
+                            About Us
+                        </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="signup.html">Sign Up</a>
+                        <a class="nav-link" href="signup.html">
+                            Sign Up
+                        </a>
                     </li>
 
                 </ul>
+
             </div>
         </div>
     </nav>
+
 
     <!-- Main Content -->
     <main class="container my-5">
@@ -68,17 +84,22 @@
 
                     <div class="card-body p-4">
 
-                        <h2 class="text-center mb-4">Create an Account</h2>
+                        <h2 class="text-center mb-4">
+                            Create an Account
+                        </h2>
 
                         <p class="text-center text-muted">
                             Sign up for Nick's Soccer Goods
                         </p>
 
+
                         <!-- Signup Form -->
                         <form id="signupForm">
 
+
                             <!-- Username -->
                             <div class="mb-3">
+
                                 <label for="username" class="form-label">
                                     Username
                                 </label>
@@ -90,11 +111,12 @@
                                        placeholder="Enter your username"
                                        onfocusout="validate(this)">
 
-                                <div id="usernameMessage"></div>
                             </div>
+
 
                             <!-- Email -->
                             <div class="mb-3">
+
                                 <label for="email" class="form-label">
                                     Email
                                 </label>
@@ -106,11 +128,12 @@
                                        placeholder="Enter your email"
                                        onfocusout="validate(this)">
 
-                                <div id="emailMessage"></div>
                             </div>
+
 
                             <!-- Password -->
                             <div class="mb-3">
+
                                 <label for="password" class="form-label">
                                     Password
                                 </label>
@@ -122,11 +145,12 @@
                                        placeholder="Enter your password"
                                        onfocusout="validate(this)">
 
-                                <div id="passwordMessage"></div>
                             </div>
+
 
                             <!-- Confirm Password -->
                             <div class="mb-3">
+
                                 <label for="confirmPassword" class="form-label">
                                     Confirm Password
                                 </label>
@@ -138,26 +162,39 @@
                                        placeholder="Confirm your password"
                                        onfocusout="validate(this)">
 
-                                <div id="confirmPasswordMessage"></div>
                             </div>
+
 
                             <!-- Submit Button -->
                             <div class="d-grid">
-                                <button type="submit" class="btn btn-primary">
+
+                                <button type="submit"
+                                        class="btn btn-primary">
+
                                     Sign Up
+
                                 </button>
+
                             </div>
 
                         </form>
 
+
+                        <!-- Return to Storefront -->
                         <div class="text-center mt-3">
+
                             <p>
                                 Already have an account?
-                                <a href="storefront.html">Return to Storefront</a>
+
+                                <a href="storefront.html">
+                                    Return to Storefront
+                                </a>
                             </p>
+
                         </div>
 
                     </div>
+
                 </div>
 
             </div>
@@ -166,11 +203,14 @@
 
     </main>
 
+
     <!-- Footer -->
     <footer class="bg-dark text-white text-center p-3">
+
         <p class="mb-0">
             &copy; 2026 Nick's Soccer Goods. All rights reserved.
         </p>
+
     </footer>
 
 
@@ -181,19 +221,27 @@
     <!-- JavaScript Validation -->
     <script>
 
-        // Validate each individual field
+        // Validate individual fields
         function validate(obj) {
 
+            // Get the value entered into the field
             var value = obj.value.trim();
 
-            // Reset the text color first
+
+            // Reset the field to its normal appearance
             obj.style.color = "";
+            obj.style.borderColor = "";
+
 
             // Check if the field is empty
             if (value === "") {
-                obj.style.color = "#FF0000";
+
+                obj.style.color = "red";
+                obj.style.borderColor = "red";
+
                 return false;
             }
+
 
             // Check email format
             if (obj.id === "email") {
@@ -201,24 +249,34 @@
                 var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
                 if (!emailPattern.test(value)) {
-                    obj.style.color = "#FF0000";
+
+                    obj.style.color = "red";
+                    obj.style.borderColor = "red";
+
                     return false;
                 }
             }
+
 
             // Check that passwords match
             if (obj.id === "confirmPassword") {
 
-                var password = document.getElementById("password").value;
+                var password =
+                    document.getElementById("password").value;
 
                 if (value !== password) {
-                    obj.style.color = "#FF0000";
+
+                    obj.style.color = "red";
+                    obj.style.borderColor = "red";
+
                     return false;
                 }
             }
 
+
             // Field is valid
             obj.style.color = "";
+            obj.style.borderColor = "";
 
             return true;
         }
@@ -227,23 +285,39 @@
         // Validate all fields when the form is submitted
         document.getElementById("signupForm").addEventListener("submit", function(event) {
 
-            var username = document.getElementById("username");
-            var email = document.getElementById("email");
-            var password = document.getElementById("password");
-            var confirmPassword = document.getElementById("confirmPassword");
+            var username =
+                document.getElementById("username");
 
+            var email =
+                document.getElementById("email");
+
+            var password =
+                document.getElementById("password");
+
+            var confirmPassword =
+                document.getElementById("confirmPassword");
+
+
+            // Validate each field
             var usernameValid = validate(username);
-            var emailValid = validate(email);
-            var passwordValid = validate(password);
-            var confirmPasswordValid = validate(confirmPassword);
 
-            // Prevent submission if any field is invalid
+            var emailValid = validate(email);
+
+            var passwordValid = validate(password);
+
+            var confirmPasswordValid =
+                validate(confirmPassword);
+
+
+            // Stop the form from submitting
+            // if any field is invalid
             if (!usernameValid ||
                 !emailValid ||
                 !passwordValid ||
                 !confirmPasswordValid) {
 
                 event.preventDefault();
+
             }
 
         });
