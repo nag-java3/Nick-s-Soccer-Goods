@@ -5,6 +5,13 @@
    Product Management Assignment
 ========================================= */
 
+/*
+   CSS DESIGNER AND LAYOUT
+   Author: Nick Golter
+   Contribution: External stylesheet, page layout, colors, spacing,
+   typography, buttons, form styling, and mobile responsiveness.
+*/
+
 /* BASIC PAGE STYLING */
 body {
     font-family: Arial, sans-serif;
@@ -12,6 +19,13 @@ body {
     background-color: #f4f4f4;
     color: #222;
 }
+
+/*
+   HTML STRUCTURE SUPPORT
+   Author: Jason Mathew
+   Contribution: Page sections and structural elements styled below,
+   including the header, navigation, main content, and footer.
+*/
 
 /* HEADER */
 .page-header {
@@ -53,6 +67,13 @@ body {
 main.container {
     max-width: 1000px;
 }
+
+/*
+   PRODUCT CONTENT AND FORM PRESENTATION
+   Author: Kevin Mathew
+   Contribution: Product management content and field organization,
+   including the product form, JSON output, and saved-products table.
+*/
 
 /* PRODUCT SECTIONS */
 .product-section {
@@ -122,6 +143,13 @@ main.container {
     font-size: 14px;
     color: #222;
 }
+
+/*
+   QUALITY TESTING AND USABILITY
+   Author: Aziz Abilkosimov
+   Contribution: Project coordination and quality-testing review
+   of form feedback, status messages, table readability, and layout.
+*/
 
 /* STATUS MESSAGES */
 #formMessage,
