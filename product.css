@@ -1,0 +1,177 @@
+
+/* =========================================
+   EXTERNAL CSS
+   Nick's Soccer Goods
+   Product Management Assignment
+========================================= */
+
+/* BASIC PAGE STYLING */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+    color: #222;
+}
+
+/* HEADER */
+.page-header {
+    background-color: #f8f9fa;
+    color: #222;
+    text-align: center;
+    padding: 30px 15px;
+}
+
+.page-header h1 {
+    margin-bottom: 10px;
+    font-size: 32px;
+}
+
+.page-header p {
+    margin-bottom: 0;
+}
+
+/* NAVIGATION BAR */
+.navbar {
+    background-color: #222 !important;
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+.navbar .nav-link {
+    color: white !important;
+    font-weight: bold;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: #8be28f !important;
+}
+
+/* MAIN CONTENT */
+main.container {
+    max-width: 1000px;
+}
+
+/* PRODUCT SECTIONS */
+.product-section {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.product-section h2 {
+    color: #176b2c;
+    margin-bottom: 20px;
+}
+
+.product-section h3 {
+    font-size: 22px;
+    margin-top: 20px;
+    margin-bottom: 12px;
+}
+
+.section-description {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* FORM LABELS */
+.form-label {
+    font-weight: bold;
+}
+
+/* FORM INPUTS */
+.form-control,
+.form-select {
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #176b2c;
+    box-shadow: 0 0 0 0.2rem rgba(23, 107, 44, 0.15);
+}
+
+/* BUTTONS */
+.btn-success {
+    background-color: #4caf50;
+    border-color: #4caf50;
+}
+
+.btn-success:hover {
+    background-color: #388e3c;
+    border-color: #388e3c;
+}
+
+/* JSON OUTPUT */
+.json-output {
+    background-color: #f1f3f5;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    min-height: 100px;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 14px;
+    color: #222;
+}
+
+/* STATUS MESSAGES */
+#formMessage,
+#searchMessage,
+#updateMessage {
+    font-weight: bold;
+}
+
+/* PRODUCT TABLE */
+.table {
+    margin-top: 15px;
+    vertical-align: middle;
+}
+
+.table th {
+    white-space: nowrap;
+}
+
+/* FOOTER */
+.page-footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.page-footer p {
+    margin-bottom: 5px;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 700px) {
+    .page-header {
+        padding: 25px 15px;
+    }
+
+    .page-header h1 {
+        font-size: 26px;
+    }
+
+    .product-section {
+        padding: 18px;
+    }
+
+    .product-section h2 {
+        font-size: 23px;
+    }
+
+    .json-output {
+        font-size: 12px;
+    }
+}
