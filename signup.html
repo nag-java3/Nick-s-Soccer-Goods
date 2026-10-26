@@ -1,290 +1,549 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Sign Up - Nick's Soccer Goods</title>
 
-    <!-- Bootstrap CSS cloud library -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-          rel="stylesheet">
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- External CSS -->
+    <!-- Your Custom CSS -->
     <link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
-    <!--
-        SIGNUP PAGE STRUCTURE
-        Author: Nick Golter
-        Contribution: Account signup form and page content.
-    -->
 
-    <header class="text-center p-4">
+    <!-- Header -->
+
+    <header class="bg-dark text-white text-center p-4">
+
         <h1>Nick's Soccer Goods</h1>
+
         <p>Your one-stop shop for soccer gear!</p>
+
     </header>
 
-    <nav class="navbar navbar-expand-lg navbar-dark">
+
+
+    <!-- Navigation Bar -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+
         <div class="container">
+
             <a class="navbar-brand" href="index.html">
                 Nick's Soccer Goods
             </a>
 
+
             <button class="navbar-toggler"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#navbarNav"
-                    aria-controls="navbarNav"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation">
+                    data-bs-target="#navbarNav">
+
                 <span class="navbar-toggler-icon"></span>
+
             </button>
 
+
             <div class="collapse navbar-collapse" id="navbarNav">
+
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
+
 
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html#products">Products</a>
+
+                        <a class="nav-link" href="index.html">
+                            Home
+                        </a>
+
                     </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="product.html">Product Management</a>
-                    </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="shoppingcart.html">Shopping Cart</a>
+
+                        <a class="nav-link" href="index.html#products">
+                            Products
+                        </a>
+
                     </li>
 
+
                     <li class="nav-item">
-                        <a class="nav-link active" href="signup.html">Sign Up</a>
+
+                        <a class="nav-link" href="index.html#about">
+                            About Us
+                        </a>
+
                     </li>
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link active" href="signup.html">
+                            Sign Up
+                        </a>
+
+                    </li>
+
+
                 </ul>
+
             </div>
+
         </div>
+
     </nav>
 
+
+
+    <!-- Main Content -->
+
     <main class="container my-5">
+
         <div class="row justify-content-center">
+
             <div class="col-md-6 col-lg-5">
+
                 <div class="card shadow">
+
                     <div class="card-body p-4">
 
-                        <h2 class="text-center mb-4">Create an Account</h2>
+
+                        <h2 class="text-center mb-4">
+                            Create an Account
+                        </h2>
+
 
                         <p class="text-center text-muted">
-                            Sign up for Nick's Soccer Goods.
+                            Sign up for Nick's Soccer Goods
                         </p>
 
-                        <form id="signupForm" novalidate>
+
+
+                        <!-- Signup Form -->
+
+                        <form id="signupForm">
+
+
+                            <!-- Username -->
 
                             <div class="mb-3">
-                                <label for="username" class="form-label">Username</label>
+
+                                <label for="username" class="form-label">
+                                    Username
+                                </label>
+
                                 <input type="text"
                                        class="form-control"
                                        id="username"
                                        name="username"
+                                       placeholder="Enter your username"
                                        required>
-                                <div id="usernameError" class="text-danger small"></div>
+
+                                <div id="usernameError"
+                                     class="text-danger small mt-1">
+                                </div>
+
                             </div>
 
+
+
+                            <!-- Confirm Username -->
+
                             <div class="mb-3">
+
                                 <label for="confirmUsername" class="form-label">
                                     Confirm Username
                                 </label>
+
                                 <input type="text"
                                        class="form-control"
                                        id="confirmUsername"
                                        name="confirmUsername"
+                                       placeholder="Confirm your username"
                                        required>
-                                <div id="confirmUsernameError" class="text-danger small"></div>
+
+                                <div id="confirmUsernameError"
+                                     class="text-danger small mt-1">
+                                </div>
+
                             </div>
 
+
+
+                            <!-- Email -->
+
                             <div class="mb-3">
-                                <label for="email" class="form-label">Email</label>
+
+                                <label for="email" class="form-label">
+                                    Email
+                                </label>
+
                                 <input type="email"
                                        class="form-control"
                                        id="email"
                                        name="email"
+                                       placeholder="Enter your email"
                                        required>
-                                <div id="emailError" class="text-danger small"></div>
+
+                                <div id="emailError"
+                                     class="text-danger small mt-1">
+                                </div>
+
                             </div>
 
+
+
+                            <!-- Password -->
+
                             <div class="mb-3">
-                                <label for="password" class="form-label">Password</label>
+
+                                <label for="password" class="form-label">
+                                    Password
+                                </label>
+
                                 <input type="password"
                                        class="form-control"
                                        id="password"
                                        name="password"
+                                       placeholder="Enter your password"
                                        required>
-                                <div id="passwordError" class="text-danger small"></div>
+
+                                <div id="passwordError"
+                                     class="text-danger small mt-1">
+                                </div>
+
                             </div>
 
+
+
+                            <!-- Confirm Password -->
+
                             <div class="mb-3">
+
                                 <label for="confirmPassword" class="form-label">
                                     Confirm Password
                                 </label>
+
                                 <input type="password"
                                        class="form-control"
                                        id="confirmPassword"
                                        name="confirmPassword"
+                                       placeholder="Confirm your password"
                                        required>
-                                <div id="confirmPasswordError" class="text-danger small"></div>
+
+                                <div id="confirmPasswordError"
+                                     class="text-danger small mt-1">
+                                </div>
+
                             </div>
+
+
+
+                            <!-- Submit Button -->
 
                             <div class="d-grid">
-                                <button type="submit" class="btn btn-success">
+
+                                <button type="submit"
+                                        class="btn btn-primary">
+
                                     Sign Up
+
                                 </button>
+
                             </div>
 
-                            <div id="signupMessage"
-                                 class="mt-3"
-                                 role="status"
-                                 aria-live="polite"></div>
+
                         </form>
 
+
+
+                        <!-- JSON Output -->
+
                         <div class="mt-4">
-                            <h4>JSON Shopper Document</h4>
+
+                            <h4>
+                                JSON Shopper Document
+                            </h4>
+
                             <pre id="jsonOutput"
                                  class="bg-light border rounded p-3"
                                  style="display: none; white-space: pre-wrap;"></pre>
+
                         </div>
+
+
+
+                        <!-- Return to Storefront -->
 
                         <div class="text-center mt-3">
-                            <a href="index.html">Return to Storefront</a>
+
+                            <p>
+
+                                Already have an account?
+
+                                <a href="index.html">
+                                    Return to Storefront
+                                </a>
+
+                            </p>
+
                         </div>
 
+
                     </div>
+
                 </div>
+
             </div>
+
         </div>
+
     </main>
 
-    <footer class="text-center p-3">
-        <p>&copy; 2026 Nick's Soccer Goods. All rights reserved.</p>
+
+
+    <!-- Footer -->
+
+    <footer class="bg-dark text-white text-center p-3">
+
+        <p class="mb-0">
+            &copy; 2026 Nick's Soccer Goods. All rights reserved.
+        </p>
+
     </footer>
 
-    <!-- Bootstrap JavaScript cloud library -->
+
+
+    <!-- Bootstrap JavaScript CDN -->
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!--
-        FORM VALIDATION AND JSON SHOPPER DOCUMENT
-        Author: Nick Golter
-        Contribution: Form validation and JSON output.
-    -->
+
+
+    <!-- JavaScript Validation and JSON -->
+
     <script>
+
+        // Get the signup form
         const signupForm = document.getElementById("signupForm");
 
-        signupForm.addEventListener("submit", function (event) {
+
+        // Run when the user clicks the Sign Up button
+        signupForm.addEventListener("submit", function(event) {
+
+            // Stop the page from refreshing
             event.preventDefault();
 
-            const username = document.getElementById("username");
-            const confirmUsername = document.getElementById("confirmUsername");
-            const email = document.getElementById("email");
-            const password = document.getElementById("password");
-            const confirmPassword = document.getElementById("confirmPassword");
 
-            const fields = [
-                "username",
-                "confirmUsername",
-                "email",
-                "password",
-                "confirmPassword"
-            ];
+            // Get the input fields from the DOM
+            const username =
+                document.getElementById("username");
 
-            fields.forEach(function (id) {
-                document.getElementById(id + "Error").textContent = "";
-                document.getElementById(id).classList.remove("is-invalid");
-            });
+            const confirmUsername =
+                document.getElementById("confirmUsername");
 
-            const message = document.getElementById("signupMessage");
-            message.textContent = "";
-            message.className = "mt-3";
+            const email =
+                document.getElementById("email");
 
+            const password =
+                document.getElementById("password");
+
+            const confirmPassword =
+                document.getElementById("confirmPassword");
+
+
+            // Get the error message areas
+            const usernameError =
+                document.getElementById("usernameError");
+
+            const confirmUsernameError =
+                document.getElementById("confirmUsernameError");
+
+            const emailError =
+                document.getElementById("emailError");
+
+            const passwordError =
+                document.getElementById("passwordError");
+
+            const confirmPasswordError =
+                document.getElementById("confirmPasswordError");
+
+
+            // Clear previous error messages
+            usernameError.textContent = "";
+            confirmUsernameError.textContent = "";
+            emailError.textContent = "";
+            passwordError.textContent = "";
+            confirmPasswordError.textContent = "";
+
+
+            // Reset borders
+            username.classList.remove("is-invalid");
+            confirmUsername.classList.remove("is-invalid");
+            email.classList.remove("is-invalid");
+            password.classList.remove("is-invalid");
+            confirmPassword.classList.remove("is-invalid");
+
+
+            // Track whether the form is valid
             let valid = true;
 
-            function showError(field, errorId, text) {
-                document.getElementById(errorId).textContent = text;
-                field.classList.add("is-invalid");
+
+            // Check Username
+            if (username.value.trim() === "") {
+
+                usernameError.textContent =
+                    "Username is required.";
+
+                username.classList.add("is-invalid");
+
                 valid = false;
             }
 
-            if (username.value.trim() === "") {
-                showError(username, "usernameError", "Username is required.");
-            }
 
+            // Check Confirm Username
             if (confirmUsername.value.trim() === "") {
-                showError(
-                    confirmUsername,
-                    "confirmUsernameError",
-                    "Please confirm your username."
-                );
-            } else if (username.value.trim() !== confirmUsername.value.trim()) {
-                showError(
-                    confirmUsername,
-                    "confirmUsernameError",
-                    "Usernames do not match."
-                );
+
+                confirmUsernameError.textContent =
+                    "Please confirm your username.";
+
+                confirmUsername.classList.add("is-invalid");
+
+                valid = false;
+
+            } else if (username.value.trim() !==
+                       confirmUsername.value.trim()) {
+
+                confirmUsernameError.textContent =
+                    "Usernames do not match.";
+
+                confirmUsername.classList.add("is-invalid");
+
+                valid = false;
             }
 
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+            // Check Email
             if (email.value.trim() === "") {
-                showError(email, "emailError", "Email is required.");
-            } else if (!emailPattern.test(email.value.trim())) {
-                showError(email, "emailError", "Please enter a valid email address.");
+
+                emailError.textContent =
+                    "Email is required.";
+
+                email.classList.add("is-invalid");
+
+                valid = false;
+
+            } else {
+
+                const emailPattern =
+                    /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+                if (!emailPattern.test(email.value.trim())) {
+
+                    emailError.textContent =
+                        "Please enter a valid email address.";
+
+                    email.classList.add("is-invalid");
+
+                    valid = false;
+                }
             }
 
+
+            // Check Password
             if (password.value === "") {
-                showError(password, "passwordError", "Password is required.");
+
+                passwordError.textContent =
+                    "Password is required.";
+
+                password.classList.add("is-invalid");
+
+                valid = false;
             }
 
+
+            // Check Confirm Password
             if (confirmPassword.value === "") {
-                showError(
-                    confirmPassword,
-                    "confirmPasswordError",
-                    "Please confirm your password."
-                );
-            } else if (password.value !== confirmPassword.value) {
-                showError(
-                    confirmPassword,
-                    "confirmPasswordError",
-                    "Passwords do not match."
-                );
+
+                confirmPasswordError.textContent =
+                    "Please confirm your password.";
+
+                confirmPassword.classList.add("is-invalid");
+
+                valid = false;
+
+            } else if (password.value !==
+                       confirmPassword.value) {
+
+                confirmPasswordError.textContent =
+                    "Passwords do not match.";
+
+                confirmPassword.classList.add("is-invalid");
+
+                valid = false;
             }
 
+
+            // Stop here if the form is not valid
             if (!valid) {
-                message.textContent = "Please correct the highlighted fields.";
-                message.classList.add("text-danger");
-                document.getElementById("jsonOutput").style.display = "none";
+
                 return;
             }
 
-            // Never include passwords in the visible JSON document.
+
+            /*
+             * Create the JSON Shopper Document.
+             *
+             * The values are taken directly from
+             * the browser DOM input fields.
+             */
+
             const shopper = {
+
                 username: username.value.trim(),
-                email: email.value.trim()
+
+                confirmUsername:
+                    confirmUsername.value.trim(),
+
+                email: email.value.trim(),
+
+                password: password.value,
+
+                confirmPassword:
+                    confirmPassword.value
+
             };
 
-            document.getElementById("jsonOutput").textContent =
+
+            // Convert the JavaScript object into JSON
+            const jsonDocument =
                 JSON.stringify(shopper, null, 4);
 
-            document.getElementById("jsonOutput").style.display = "block";
 
-            message.textContent = "Signup form validated successfully.";
-            message.classList.add("text-success");
+            // Display the JSON document on the webpage
+            const jsonOutput =
+                document.getElementById("jsonOutput");
+
+            jsonOutput.textContent = jsonDocument;
+
+            jsonOutput.style.display = "block";
+
+
         });
+
     </script>
 
-</body>
-</html>
 
+</body>
+
+</html>
 
