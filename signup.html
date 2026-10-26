@@ -1,142 +1,120 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Sign Up - Nick's Soccer Goods</title>
 
-    <!-- Bootstrap CSS CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- TEAM TASK 3: BOOTSTRAP
+         Author: Nick Golter
+         Contribution: Professional form and responsive layout.
+    -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
 
-    <!-- Your Custom CSS -->
+    <!-- TEAM TASK 2: EXTERNAL CSS
+         Author: Nick Golter
+         Contribution: Shared storefront styling.
+    -->
     <link rel="stylesheet" href="style.css">
-
 </head>
-
 
 <body>
 
-
-    <!-- Header -->
-
+    <!-- TEAM TASK 1: HTML STRUCTURE
+         Author: Jason Mathew
+         Contribution: Signup page and navigation structure.
+    -->
     <header class="bg-dark text-white text-center p-4">
-
         <h1>Nick's Soccer Goods</h1>
-
         <p>Your one-stop shop for soccer gear!</p>
-
     </header>
 
-
-
-    <!-- Navigation Bar -->
-
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-
         <div class="container">
 
             <a class="navbar-brand" href="index.html">
                 Nick's Soccer Goods
             </a>
 
-
             <button class="navbar-toggler"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#navbarNav">
-
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-
             </button>
 
-
             <div class="collapse navbar-collapse" id="navbarNav">
-
                 <ul class="navbar-nav ms-auto">
 
-
                     <li class="nav-item">
-
-                        <a class="nav-link" href="index.html">
-                            Home
-                        </a>
-
+                        <a class="nav-link" href="index.html">Home</a>
                     </li>
 
-
                     <li class="nav-item">
-
                         <a class="nav-link" href="index.html#products">
                             Products
                         </a>
-
                     </li>
 
-
                     <li class="nav-item">
-
                         <a class="nav-link" href="index.html#about">
                             About Us
                         </a>
-
                     </li>
 
-
                     <li class="nav-item">
-
                         <a class="nav-link active" href="signup.html">
                             Sign Up
                         </a>
-
                     </li>
 
+                    <li class="nav-item">
+                        <a class="nav-link" href="product.html">
+                            Product Management
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="shoppingcart.html">
+                            Shopping Cart
+                        </a>
+                    </li>
 
                 </ul>
-
             </div>
-
         </div>
-
     </nav>
-
-
-
-    <!-- Main Content -->
 
     <main class="container my-5">
 
         <div class="row justify-content-center">
-
             <div class="col-md-6 col-lg-5">
 
                 <div class="card shadow">
-
                     <div class="card-body p-4">
-
 
                         <h2 class="text-center mb-4">
                             Create an Account
                         </h2>
 
-
                         <p class="text-center text-muted">
                             Sign up for Nick's Soccer Goods
                         </p>
 
-
-
-                        <!-- Signup Form -->
-
-                        <form id="signupForm">
-
-
-                            <!-- Username -->
+                        <!-- TEAM TASK 1: SIGNUP FORM STRUCTURE
+                             Author: Jason Mathew
+                             Contribution: Form fields and page structure.
+                        -->
+                        <form id="signupForm" novalidate>
 
                             <div class="mb-3">
-
                                 <label for="username" class="form-label">
                                     Username
                                 </label>
@@ -145,22 +123,15 @@
                                        class="form-control"
                                        id="username"
                                        name="username"
-                                       placeholder="Enter your username"
                                        required>
 
                                 <div id="usernameError"
-                                     class="text-danger small mt-1">
-                                </div>
-
+                                     class="text-danger small mt-1"></div>
                             </div>
 
-
-
-                            <!-- Confirm Username -->
-
                             <div class="mb-3">
-
-                                <label for="confirmUsername" class="form-label">
+                                <label for="confirmUsername"
+                                       class="form-label">
                                     Confirm Username
                                 </label>
 
@@ -168,21 +139,13 @@
                                        class="form-control"
                                        id="confirmUsername"
                                        name="confirmUsername"
-                                       placeholder="Confirm your username"
                                        required>
 
                                 <div id="confirmUsernameError"
-                                     class="text-danger small mt-1">
-                                </div>
-
+                                     class="text-danger small mt-1"></div>
                             </div>
 
-
-
-                            <!-- Email -->
-
                             <div class="mb-3">
-
                                 <label for="email" class="form-label">
                                     Email
                                 </label>
@@ -191,21 +154,13 @@
                                        class="form-control"
                                        id="email"
                                        name="email"
-                                       placeholder="Enter your email"
                                        required>
 
                                 <div id="emailError"
-                                     class="text-danger small mt-1">
-                                </div>
-
+                                     class="text-danger small mt-1"></div>
                             </div>
 
-
-
-                            <!-- Password -->
-
                             <div class="mb-3">
-
                                 <label for="password" class="form-label">
                                     Password
                                 </label>
@@ -214,22 +169,15 @@
                                        class="form-control"
                                        id="password"
                                        name="password"
-                                       placeholder="Enter your password"
                                        required>
 
                                 <div id="passwordError"
-                                     class="text-danger small mt-1">
-                                </div>
-
+                                     class="text-danger small mt-1"></div>
                             </div>
 
-
-
-                            <!-- Confirm Password -->
-
                             <div class="mb-3">
-
-                                <label for="confirmPassword" class="form-label">
+                                <label for="confirmPassword"
+                                       class="form-label">
                                     Confirm Password
                                 </label>
 
@@ -237,313 +185,167 @@
                                        class="form-control"
                                        id="confirmPassword"
                                        name="confirmPassword"
-                                       placeholder="Confirm your password"
                                        required>
 
                                 <div id="confirmPasswordError"
-                                     class="text-danger small mt-1">
-                                </div>
-
+                                     class="text-danger small mt-1"></div>
                             </div>
-
-
-
-                            <!-- Submit Button -->
 
                             <div class="d-grid">
-
-                                <button type="submit"
-                                        class="btn btn-primary">
-
+                                <button type="submit" class="btn btn-primary">
                                     Sign Up
-
                                 </button>
-
                             </div>
-
 
                         </form>
 
-
-
-                        <!-- JSON Output -->
-
+                        <!-- TEAM TASK 5: JSON DOCUMENT
+                             Author: Kevin Mathew
+                             Contribution: Shopper JSON document structure.
+                        -->
                         <div class="mt-4">
-
-                            <h4>
-                                JSON Shopper Document
-                            </h4>
+                            <h4>JSON Shopper Document</h4>
 
                             <pre id="jsonOutput"
                                  class="bg-light border rounded p-3"
-                                 style="display: none; white-space: pre-wrap;"></pre>
-
+                                 style="display:none; white-space:pre-wrap;"></pre>
                         </div>
-
-
-
-                        <!-- Return to Storefront -->
 
                         <div class="text-center mt-3">
-
                             <p>
-
-                                Already have an account?
-
-                                <a href="index.html">
-                                    Return to Storefront
-                                </a>
-
+                                Return to
+                                <a href="index.html">Storefront</a>
+                                or visit the
+                                <a href="shoppingcart.html">Shopping Cart</a>.
                             </p>
-
                         </div>
 
-
                     </div>
-
                 </div>
 
             </div>
-
         </div>
 
     </main>
 
-
-
-    <!-- Footer -->
-
     <footer class="bg-dark text-white text-center p-3">
-
         <p class="mb-0">
             &copy; 2026 Nick's Soccer Goods. All rights reserved.
         </p>
-
     </footer>
-
-
-
-    <!-- Bootstrap JavaScript CDN -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-
-
-    <!-- JavaScript Validation and JSON -->
-
+    <!-- TEAM TASK 4: JAVASCRIPT VALIDATION
+         Author: Aziz Abilkosimov
+         Contribution: Form integrity checks and JSON generation.
+    -->
     <script>
-
-        // Get the signup form
         const signupForm = document.getElementById("signupForm");
 
-
-        // Run when the user clicks the Sign Up button
-        signupForm.addEventListener("submit", function(event) {
-
-            // Stop the page from refreshing
+        signupForm.addEventListener("submit", function (event) {
             event.preventDefault();
 
+            const username = document.getElementById("username");
+            const confirmUsername = document.getElementById("confirmUsername");
+            const email = document.getElementById("email");
+            const password = document.getElementById("password");
+            const confirmPassword = document.getElementById("confirmPassword");
 
-            // Get the input fields from the DOM
-            const username =
-                document.getElementById("username");
+            const fields = [
+                ["username", username],
+                ["confirmUsername", confirmUsername],
+                ["email", email],
+                ["password", password],
+                ["confirmPassword", confirmPassword]
+            ];
 
-            const confirmUsername =
-                document.getElementById("confirmUsername");
-
-            const email =
-                document.getElementById("email");
-
-            const password =
-                document.getElementById("password");
-
-            const confirmPassword =
-                document.getElementById("confirmPassword");
-
-
-            // Get the error message areas
-            const usernameError =
-                document.getElementById("usernameError");
-
-            const confirmUsernameError =
-                document.getElementById("confirmUsernameError");
-
-            const emailError =
-                document.getElementById("emailError");
-
-            const passwordError =
-                document.getElementById("passwordError");
-
-            const confirmPasswordError =
-                document.getElementById("confirmPasswordError");
-
-
-            // Clear previous error messages
-            usernameError.textContent = "";
-            confirmUsernameError.textContent = "";
-            emailError.textContent = "";
-            passwordError.textContent = "";
-            confirmPasswordError.textContent = "";
-
-
-            // Reset borders
-            username.classList.remove("is-invalid");
-            confirmUsername.classList.remove("is-invalid");
-            email.classList.remove("is-invalid");
-            password.classList.remove("is-invalid");
-            confirmPassword.classList.remove("is-invalid");
-
-
-            // Track whether the form is valid
             let valid = true;
 
+            fields.forEach(function ([name, field]) {
+                document.getElementById(name + "Error").textContent = "";
+                field.classList.remove("is-invalid");
+            });
 
-            // Check Username
+            function setError(field, errorId, message) {
+                document.getElementById(errorId).textContent = message;
+                field.classList.add("is-invalid");
+                valid = false;
+            }
+
             if (username.value.trim() === "") {
-
-                usernameError.textContent =
-                    "Username is required.";
-
-                username.classList.add("is-invalid");
-
-                valid = false;
+                setError(username, "usernameError", "Username is required.");
             }
 
-
-            // Check Confirm Username
             if (confirmUsername.value.trim() === "") {
-
-                confirmUsernameError.textContent =
-                    "Please confirm your username.";
-
-                confirmUsername.classList.add("is-invalid");
-
-                valid = false;
-
-            } else if (username.value.trim() !==
-                       confirmUsername.value.trim()) {
-
-                confirmUsernameError.textContent =
-                    "Usernames do not match.";
-
-                confirmUsername.classList.add("is-invalid");
-
-                valid = false;
+                setError(
+                    confirmUsername,
+                    "confirmUsernameError",
+                    "Please confirm your username."
+                );
+            } else if (
+                username.value.trim() !== confirmUsername.value.trim()
+            ) {
+                setError(
+                    confirmUsername,
+                    "confirmUsernameError",
+                    "Usernames do not match."
+                );
             }
 
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-            // Check Email
-            if (email.value.trim() === "") {
-
-                emailError.textContent =
-                    "Email is required.";
-
-                email.classList.add("is-invalid");
-
-                valid = false;
-
-            } else {
-
-                const emailPattern =
-                    /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-                if (!emailPattern.test(email.value.trim())) {
-
-                    emailError.textContent =
-                        "Please enter a valid email address.";
-
-                    email.classList.add("is-invalid");
-
-                    valid = false;
-                }
+            if (!emailPattern.test(email.value.trim())) {
+                setError(
+                    email,
+                    "emailError",
+                    "Please enter a valid email address."
+                );
             }
 
-
-            // Check Password
             if (password.value === "") {
-
-                passwordError.textContent =
-                    "Password is required.";
-
-                password.classList.add("is-invalid");
-
-                valid = false;
+                setError(password, "passwordError", "Password is required.");
             }
 
-
-            // Check Confirm Password
             if (confirmPassword.value === "") {
-
-                confirmPasswordError.textContent =
-                    "Please confirm your password.";
-
-                confirmPassword.classList.add("is-invalid");
-
-                valid = false;
-
-            } else if (password.value !==
-                       confirmPassword.value) {
-
-                confirmPasswordError.textContent =
-                    "Passwords do not match.";
-
-                confirmPassword.classList.add("is-invalid");
-
-                valid = false;
+                setError(
+                    confirmPassword,
+                    "confirmPasswordError",
+                    "Please confirm your password."
+                );
+            } else if (password.value !== confirmPassword.value) {
+                setError(
+                    confirmPassword,
+                    "confirmPasswordError",
+                    "Passwords do not match."
+                );
             }
 
-
-            // Stop here if the form is not valid
             if (!valid) {
-
                 return;
             }
 
-
             /*
-             * Create the JSON Shopper Document.
-             *
-             * The values are taken directly from
-             * the browser DOM input fields.
-             */
-
+                TEAM TASK 5: JSON SHOPPER DOCUMENT
+                Author: Kevin Mathew
+                Contribution: Shopper data fields and JSON structure.
+            */
             const shopper = {
-
                 username: username.value.trim(),
-
-                confirmUsername:
-                    confirmUsername.value.trim(),
-
+                confirmUsername: confirmUsername.value.trim(),
                 email: email.value.trim(),
-
                 password: password.value,
-
-                confirmPassword:
-                    confirmPassword.value
-
+                confirmPassword: confirmPassword.value
             };
 
-
-            // Convert the JavaScript object into JSON
-            const jsonDocument =
+            document.getElementById("jsonOutput").textContent =
                 JSON.stringify(shopper, null, 4);
 
-
-            // Display the JSON document on the webpage
-            const jsonOutput =
-                document.getElementById("jsonOutput");
-
-            jsonOutput.textContent = jsonDocument;
-
-            jsonOutput.style.display = "block";
-
-
+            document.getElementById("jsonOutput").style.display = "block";
         });
-
     </script>
 
-
 </body>
-
 </html>
+
 
