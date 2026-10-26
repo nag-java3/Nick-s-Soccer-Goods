@@ -57,6 +57,7 @@
 </head>
 
 <body>
+
     <!-- TEAM TASK 1: PAGE HEADER
          Author: Jason Mathew
     -->
@@ -72,8 +73,10 @@
             <a class="navbar-brand" href="index.html">⚽ Nick's Soccer Goods</a>
 
             <button class="navbar-toggler" type="button"
-                    data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
                     aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -102,6 +105,7 @@
     </nav>
 
     <main class="container my-4">
+
         <!-- TEAM TASK 1 AND 6: PRODUCT SEARCH
              Authors: Jason Mathew and Aziz Abilkosimov
         -->
@@ -114,13 +118,22 @@
                     <label for="searchTerm" class="form-label">
                         Product ID or Description
                     </label>
-                    <input type="text" class="form-control" id="searchTerm"
-                           placeholder="Example: SOCCER001 or Soccer Ball" required>
+                    <input type="text"
+                           class="form-control"
+                           id="searchTerm"
+                           placeholder="Example: SOCCER001 or Soccer Ball"
+                           required>
                 </div>
-                <button type="submit" class="btn btn-success">Search Products</button>
+
+                <button type="submit" class="btn btn-success">
+                    Search Products
+                </button>
             </form>
 
-            <div id="searchMessage" class="mt-3" role="status" aria-live="polite"></div>
+            <div id="searchMessage"
+                 class="mt-3"
+                 role="status"
+                 aria-live="polite"></div>
 
             <div class="table-responsive mt-3">
                 <table class="table table-striped table-bordered align-middle">
@@ -133,6 +146,7 @@
                             <th>Action</th>
                         </tr>
                     </thead>
+
                     <tbody id="searchResults">
                         <tr>
                             <td colspan="5" class="text-center">
@@ -162,6 +176,7 @@
                             <th>Action</th>
                         </tr>
                     </thead>
+
                     <tbody id="cartTableBody">
                         <tr>
                             <td colspan="6" class="text-center">
@@ -169,6 +184,7 @@
                             </td>
                         </tr>
                     </tbody>
+
                     <tfoot>
                         <tr>
                             <th colspan="4" class="text-end">Cart Total:</th>
@@ -179,9 +195,13 @@
                 </table>
             </div>
 
-            <div id="cartMessage" class="mt-3" role="status" aria-live="polite"></div>
+            <div id="cartMessage"
+                 class="mt-3"
+                 role="status"
+                 aria-live="polite"></div>
 
-            <button type="button" id="clearCartButton"
+            <button type="button"
+                    id="clearCartButton"
                     class="btn btn-outline-danger">
                 Clear Shopping Cart
             </button>
@@ -199,7 +219,8 @@
     "total": 0
 }</pre>
 
-            <button type="button" id="refreshJsonButton"
+            <button type="button"
+                    id="refreshJsonButton"
                     class="btn btn-success mt-3">
                 Display Cart JSON
             </button>
@@ -209,6 +230,7 @@
              Author: Aziz Abilkosimov
              The Node.js REST API will be integrated in a later assignment.
         -->
+
     </main>
 
     <footer class="page-footer">
@@ -224,8 +246,7 @@
     <script>
         $(document).ready(function () {
 
-            // Must match the Product Management page.
-            // Products are stored as an object keyed by product ID.
+            // Read products saved by the Product Management page.
             function getProducts() {
                 try {
                     const saved = localStorage.getItem("soccerProducts");
@@ -235,7 +256,7 @@
                         return {};
                     }
 
-                    // Support both object and array formats just in case.
+                    // Support an array of products if one is saved.
                     if (Array.isArray(products)) {
                         const converted = {};
 
@@ -255,29 +276,40 @@
                 }
             }
 
+            // Read the saved shopping cart.
             function getCart() {
                 try {
                     const saved = localStorage.getItem("soccerCart");
                     const cart = saved ? JSON.parse(saved) : {};
-                    return cart && typeof cart === "object" && !Array.isArray(cart)
+
+                    return cart &&
+                           typeof cart === "object" &&
+                           !Array.isArray(cart)
                         ? cart
                         : {};
                 } catch (error) {
+                    console.error("Could not read shopping cart:", error);
                     return {};
                 }
             }
 
+            // Save the shopping cart.
             function saveCart(cart) {
                 try {
                     localStorage.setItem("soccerCart", JSON.stringify(cart));
                     return true;
                 } catch (error) {
-                    showMessage("#cartMessage",
-                        "Could not save the cart in this browser.", "danger");
+                    showMessage(
+                        "#cartMessage",
+                        "Could not save the cart in this browser.",
+                        "danger"
+                    );
+                    console.error("Could not save cart:", error);
                     return false;
                 }
             }
 
+            // Display a message to the user.
             function showMessage(selector, message, type) {
                 $(selector)
                     .removeClass("text-success text-danger text-warning")
@@ -285,15 +317,17 @@
                     .text(message);
             }
 
+            // Format a number as a dollar amount.
             function formatPrice(value) {
                 return "$" + Number(value).toFixed(2);
             }
 
+            // Get a product ID from the product or its object key.
             function getProductId(product, key) {
                 return String(product.productId || key || "");
             }
 
-            // Search saved products by ID or description.
+            // Search for products by ID or description.
             $("#searchForm").on("submit", function (event) {
                 event.preventDefault();
 
@@ -302,10 +336,14 @@
                 const $results = $("#searchResults");
 
                 $results.empty();
+                $("#searchMessage").text("");
 
                 if (!term) {
-                    showMessage("#searchMessage",
-                        "Enter a product ID or description.", "danger");
+                    showMessage(
+                        "#searchMessage",
+                        "Enter a product ID or description.",
+                        "danger"
+                    );
                     return;
                 }
 
@@ -318,7 +356,9 @@
                     }
 
                     const id = getProductId(product, key).toLowerCase();
-                    const description = String(product.productDesc || "").toLowerCase();
+                    const description = String(
+                        product.productDesc || ""
+                    ).toLowerCase();
 
                     return id.includes(term) || description.includes(term);
                 });
@@ -333,9 +373,11 @@
                         )
                     );
 
-                    showMessage("#searchMessage",
-                        "No matching products found. Check that the product was saved on Product Management.",
-                        "warning");
+                    showMessage(
+                        "#searchMessage",
+                        "No matching products found. Check Product Management to confirm the product is saved.",
+                        "warning"
+                    );
                     return;
                 }
 
@@ -345,37 +387,59 @@
                     const id = getProductId(product, key);
                     const price = Number(product.productPrice);
 
+                    // FIXED: use $row consistently.
                     const $row = $("<tr>");
 
-                    row.append(("<td>").text(id));
-                    row.append(("<td>").text(product.productDesc || ""));
-                    row.append(("<td>").text(product.productCategory || ""));
-                    row.append(("<td>").text(
-                        Number.isFinite(price) ? formatPrice(price) : "Invalid price"
-                    ));
+                    $row.append($("<td>").text(id));
+                    $row.append(
+                        $("<td>").text(product.productDesc || "")
+                    );
+                    $row.append(
+                        $("<td>").text(product.productCategory || "")
+                    );
+                    $row.append(
+                        $("<td>").text(
+                            Number.isFinite(price) && price >= 0
+                                ? formatPrice(price)
+                                : "Invalid price"
+                        )
+                    );
 
                     const $button = $("<button>", {
                         type: "button",
                         class: "btn btn-success btn-sm add-to-cart"
-                    }).text("Add to Cart").attr("data-product-id", key);
+                    })
+                        .text("Add to Cart")
+                        .attr("data-product-id", key);
 
-                    row.append(("<td>").append($button));
-                    results.append(row);
+                    $row.append(
+                        $("<td>").append($button)
+                    );
+
+                    // FIXED: append $row to $results.
+                    $results.append($row);
                 });
 
-                showMessage("#searchMessage",
-                    matches.length + " matching product(s) found.", "success");
+                showMessage(
+                    "#searchMessage",
+                    matches.length + " matching product(s) found.",
+                    "success"
+                );
             });
 
-            // Add a product to the cart.
+            // Add a product to the shopping cart.
             $("#searchResults").on("click", ".add-to-cart", function () {
                 const id = String($(this).attr("data-product-id"));
                 const products = getProducts();
                 const cart = getCart();
 
+                // Look up the product using its saved object key.
                 if (!Object.prototype.hasOwnProperty.call(products, id)) {
-                    showMessage("#cartMessage",
-                        "Product not found. Search again.", "danger");
+                    showMessage(
+                        "#cartMessage",
+                        "Product not found. Search again.",
+                        "danger"
+                    );
                     return;
                 }
 
@@ -383,8 +447,11 @@
                 const price = Number(product.productPrice);
 
                 if (!Number.isFinite(price) || price < 0) {
-                    showMessage("#cartMessage",
-                        "This product has an invalid price.", "danger");
+                    showMessage(
+                        "#cartMessage",
+                        "This product has an invalid price.",
+                        "danger"
+                    );
                     return;
                 }
 
@@ -396,11 +463,14 @@
 
                 renderCart();
 
-                showMessage("#cartMessage",
-                    (product.productDesc || id) + " added to your cart.", "success");
+                showMessage(
+                    "#cartMessage",
+                    (product.productDesc || id) + " added to your cart.",
+                    "success"
+                );
             });
 
-            // Draw the cart table, quantity controls and total.
+            // Render the shopping cart table and calculate totals.
             function renderCart() {
                 const products = getProducts();
                 const cart = getCart();
@@ -428,14 +498,25 @@
                     }
 
                     validCart[id] = quantity;
-                    const subtotal = Number((price * quantity).toFixed(2));
+
+                    const subtotal = Number(
+                        (price * quantity).toFixed(2)
+                    );
+
                     total += subtotal;
 
+                    // FIXED: use $row consistently throughout.
                     const $row = $("<tr>");
 
-                    row.append(("<td>").text(getProductId(product, id)));
-                    row.append(("<td>").text(product.productDesc || ""));
-                    row.append(("<td>").text(formatPrice(price)));
+                    $row.append(
+                        $("<td>").text(getProductId(product, id))
+                    );
+                    $row.append(
+                        $("<td>").text(product.productDesc || "")
+                    );
+                    $row.append(
+                        $("<td>").text(formatPrice(price))
+                    );
 
                     const $quantityInput = $("<input>", {
                         type: "number",
@@ -443,21 +524,33 @@
                         step: "1",
                         class: "form-control form-control-sm cart-quantity",
                         value: quantity,
-                        "aria-label": "Quantity for " + (product.productDesc || id)
+                        "aria-label": "Quantity for " +
+                            (product.productDesc || id)
                     }).attr("data-product-id", id);
 
-                    row.append(("<td>").append($quantityInput));
-                    row.append(("<td>").text(formatPrice(subtotal)));
+                    $row.append(
+                        $("<td>").append($quantityInput)
+                    );
+                    $row.append(
+                        $("<td>").text(formatPrice(subtotal))
+                    );
 
                     const $removeButton = $("<button>", {
                         type: "button",
                         class: "btn btn-outline-danger btn-sm remove-from-cart"
-                    }).text("Remove").attr("data-product-id", id);
+                    })
+                        .text("Remove")
+                        .attr("data-product-id", id);
 
-                    row.append(("<td>").append($removeButton));
-                    tableBody.append(row);
+                    $row.append(
+                        $("<td>").append($removeButton)
+                    );
+
+                    // FIXED: append $row to $tableBody.
+                    $tableBody.append($row);
                 });
 
+                // Remove invalid or outdated cart entries.
                 if (JSON.stringify(validCart) !== JSON.stringify(cart)) {
                     saveCart(validCart);
                 }
@@ -473,47 +566,69 @@
                     );
                 }
 
+                total = Number(total.toFixed(2));
+
                 $("#cartTotal").text(formatPrice(total));
+
                 renderCartJson(products, validCart, total);
             }
 
-            // Update quantity when the customer changes it.
-            $("#cartTableBody").on("change", ".cart-quantity", function () {
-                const id = String($(this).attr("data-product-id"));
-                const quantity = Number($(this).val());
-                const cart = getCart();
+            // Update quantity when it changes.
+            $("#cartTableBody").on(
+                "change",
+                ".cart-quantity",
+                function () {
+                    const id = String($(this).attr("data-product-id"));
+                    const quantity = Number($(this).val());
+                    const cart = getCart();
 
-                if (!Number.isInteger(quantity) || quantity < 1) {
-                    showMessage("#cartMessage",
-                        "Quantity must be a whole number of at least 1.", "danger");
-                    renderCart();
-                    return;
+                    if (!Number.isInteger(quantity) || quantity < 1) {
+                        showMessage(
+                            "#cartMessage",
+                            "Quantity must be a whole number of at least 1.",
+                            "danger"
+                        );
+                        renderCart();
+                        return;
+                    }
+
+                    cart[id] = quantity;
+
+                    if (saveCart(cart)) {
+                        renderCart();
+
+                        showMessage(
+                            "#cartMessage",
+                            "Quantity updated.",
+                            "success"
+                        );
+                    }
                 }
+            );
 
-                cart[id] = quantity;
+            // Remove an item from the cart.
+            $("#cartTableBody").on(
+                "click",
+                ".remove-from-cart",
+                function () {
+                    const id = String($(this).attr("data-product-id"));
+                    const cart = getCart();
 
-                if (saveCart(cart)) {
-                    renderCart();
-                    showMessage("#cartMessage",
-                        "Quantity updated.", "success");
+                    delete cart[id];
+
+                    if (saveCart(cart)) {
+                        renderCart();
+
+                        showMessage(
+                            "#cartMessage",
+                            "Product removed from your cart.",
+                            "success"
+                        );
+                    }
                 }
-            });
+            );
 
-            // Remove one product from the cart.
-            $("#cartTableBody").on("click", ".remove-from-cart", function () {
-                const id = String($(this).attr("data-product-id"));
-                const cart = getCart();
-
-                delete cart[id];
-
-                if (saveCart(cart)) {
-                    renderCart();
-                    showMessage("#cartMessage",
-                        "Product removed from your cart.", "success");
-                }
-            });
-
-            // Generate the JSON shopping cart document.
+            // Build the JSON shopping cart document.
             function renderCartJson(products, cart, total) {
                 const items = [];
 
@@ -534,37 +649,51 @@
                         productUOM: product.productUOM || "",
                         productPrice: price,
                         quantity: quantity,
-                        subtotal: Number((price * quantity).toFixed(2))
+                        subtotal: Number(
+                            (price * quantity).toFixed(2)
+                        )
                     });
                 });
 
-                const document = {
+                const cartDocument = {
                     items: items,
                     total: Number(total.toFixed(2))
                 };
 
-                $("#cartJsonOutput").text(JSON.stringify(document, null, 4));
+                $("#cartJsonOutput").text(
+                    JSON.stringify(cartDocument, null, 4)
+                );
             }
 
+            // Clear all items from the cart.
             $("#clearCartButton").on("click", function () {
                 if (saveCart({})) {
                     renderCart();
-                    showMessage("#cartMessage",
-                        "Your shopping cart has been cleared.", "success");
+
+                    showMessage(
+                        "#cartMessage",
+                        "Your shopping cart has been cleared.",
+                        "success"
+                    );
                 }
             });
 
+            // Refresh the JSON document.
             $("#refreshJsonButton").on("click", function () {
                 renderCart();
-                showMessage("#cartMessage",
-                    "Shopping Cart JSON document displayed.", "success");
+
+                showMessage(
+                    "#cartMessage",
+                    "Shopping Cart JSON document displayed.",
+                    "success"
+                );
             });
 
-            // Load any previously saved cart when the page opens.
+            // Display any cart items already saved in the browser.
             renderCart();
+
         });
     </script>
+
 </body>
 </html>
-
-
