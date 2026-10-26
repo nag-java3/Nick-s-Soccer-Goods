@@ -60,6 +60,7 @@
 
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
+
                     <li class="nav-item">
                         <a class="nav-link" href="index.html">Home</a>
                     </li>
@@ -81,6 +82,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="shoppingcart.html">Shopping Cart</a>
                     </li>
+
                 </ul>
             </div>
         </div>
@@ -90,8 +92,10 @@
 
         <!-- TEAM TASK 1: PRODUCT FORM STRUCTURE
              Author: Jason Mathew
+
              TEAM TASK 2: FORM STYLING
              Author: Nick Golter
+
              TEAM TASK 4: FIELD VALIDATION
              Author: Aziz Abilkosimov
         -->
@@ -105,26 +109,51 @@
             </p>
 
             <form id="productForm" novalidate>
+
                 <div class="row">
 
                     <div class="col-md-6 mb-3">
-                        <label for="productId" class="form-label">Product ID *</label>
-                        <input type="text" class="form-control"
-                               id="productId" name="productId" required>
-                        <div class="invalid-feedback">Product ID is required.</div>
+                        <label for="productId" class="form-label">
+                            Product ID *
+                        </label>
+
+                        <input type="text"
+                               class="form-control"
+                               id="productId"
+                               name="productId"
+                               required>
+
+                        <div class="invalid-feedback">
+                            Product ID is required.
+                        </div>
                     </div>
 
                     <div class="col-md-6 mb-3">
-                        <label for="productDesc" class="form-label">Product Description *</label>
-                        <input type="text" class="form-control"
-                               id="productDesc" name="productDesc" required>
-                        <div class="invalid-feedback">Product description is required.</div>
+                        <label for="productDesc" class="form-label">
+                            Product Description *
+                        </label>
+
+                        <input type="text"
+                               class="form-control"
+                               id="productDesc"
+                               name="productDesc"
+                               required>
+
+                        <div class="invalid-feedback">
+                            Product description is required.
+                        </div>
                     </div>
 
                     <div class="col-md-6 mb-3">
-                        <label for="productCategory" class="form-label">Product Category *</label>
-                        <select class="form-select" id="productCategory"
-                                name="productCategory" required>
+                        <label for="productCategory" class="form-label">
+                            Product Category *
+                        </label>
+
+                        <select class="form-select"
+                                id="productCategory"
+                                name="productCategory"
+                                required>
+
                             <option value="">Select a category</option>
                             <option value="Men's Clothing">Men's Clothing</option>
                             <option value="Women's Clothing">Women's Clothing</option>
@@ -132,39 +161,70 @@
                             <option value="Footwear">Footwear</option>
                             <option value="Equipment">Equipment</option>
                             <option value="Accessories">Accessories</option>
+
                         </select>
-                        <div class="invalid-feedback">Please select a category.</div>
+
+                        <div class="invalid-feedback">
+                            Please select a category.
+                        </div>
                     </div>
 
                     <div class="col-md-6 mb-3">
-                        <label for="productUOM" class="form-label">Unit of Measure *</label>
-                        <select class="form-select" id="productUOM"
-                                name="productUOM" required>
+                        <label for="productUOM" class="form-label">
+                            Unit of Measure *
+                        </label>
+
+                        <select class="form-select"
+                                id="productUOM"
+                                name="productUOM"
+                                required>
+
                             <option value="">Select a unit</option>
                             <option value="Piece">Piece</option>
                             <option value="Pair">Pair</option>
                             <option value="Set">Set</option>
                             <option value="Dozen">Dozen</option>
                             <option value="Box">Box</option>
+
                         </select>
-                        <div class="invalid-feedback">Please select a unit.</div>
+
+                        <div class="invalid-feedback">
+                            Please select a unit.
+                        </div>
                     </div>
 
                     <div class="col-md-6 mb-3">
-                        <label for="productPrice" class="form-label">Product Price ($) *</label>
-                        <input type="number" class="form-control"
-                               id="productPrice" name="productPrice"
-                               min="0.01" max="999999999" step="0.01" required>
+                        <label for="productPrice" class="form-label">
+                            Product Price ($) *
+                        </label>
+
+                        <input type="number"
+                               class="form-control"
+                               id="productPrice"
+                               name="productPrice"
+                               min="0.01"
+                               max="999999999"
+                               step="0.01"
+                               required>
+
                         <div class="invalid-feedback">
                             Enter a price greater than zero with up to two decimal places.
                         </div>
                     </div>
 
                     <div class="col-md-6 mb-3">
-                        <label for="productWeight" class="form-label">Product Weight (optional)</label>
-                        <input type="number" class="form-control"
-                               id="productWeight" name="productWeight"
-                               min="0" max="999999999" step="any">
+                        <label for="productWeight" class="form-label">
+                            Product Weight (optional)
+                        </label>
+
+                        <input type="number"
+                               class="form-control"
+                               id="productWeight"
+                               name="productWeight"
+                               min="0"
+                               max="999999999"
+                               step="any">
+
                         <div class="invalid-feedback">
                             Weight must be a non-negative number.
                         </div>
@@ -173,58 +233,90 @@
                 </div>
 
                 <div class="d-grid mt-2">
-                    <button type="submit" class="btn btn-success">Save Product</button>
+                    <button type="submit" class="btn btn-success">
+                        Save Product
+                    </button>
                 </div>
 
-                <div id="formMessage" class="mt-3" role="status" aria-live="polite"></div>
+                <div id="formMessage"
+                     class="mt-3"
+                     role="status"
+                     aria-live="polite"></div>
+
             </form>
         </section>
 
         <!-- TEAM TASK 6: JQUERY PRODUCT SEARCH
              Author: Aziz Abilkosimov
-             Contribution: Search saved product records.
         -->
         <section class="product-section">
+
             <h2>Search Product</h2>
 
             <form id="searchForm">
+
                 <div class="mb-3">
-                    <label for="searchProductId" class="form-label">Product ID</label>
-                    <input type="text" class="form-control"
-                           id="searchProductId" required>
+                    <label for="searchProductId" class="form-label">
+                        Product ID
+                    </label>
+
+                    <input type="text"
+                           class="form-control"
+                           id="searchProductId"
+                           required>
                 </div>
 
-                <button type="submit" class="btn btn-outline-dark">Search</button>
+                <button type="submit" class="btn btn-outline-dark">
+                    Search
+                </button>
+
             </form>
 
-            <div id="searchMessage" class="mt-3" role="status" aria-live="polite"></div>
+            <div id="searchMessage"
+                 class="mt-3"
+                 role="status"
+                 aria-live="polite"></div>
+
         </section>
 
         <!-- TEAM TASK 5: JSON PRODUCT DOCUMENT
              Author: Kevin Mathew
-             Contribution: Product JSON structure and data fields.
         -->
         <section class="product-section">
+
             <h2>Product Details</h2>
 
             <h3>JSON</h3>
+
             <pre id="jsonOutput" class="json-output">No product selected yet.</pre>
 
             <div class="d-grid mt-3">
-                <button type="button" id="updateButton"
-                        class="btn btn-success" disabled>
+                <button type="button"
+                        id="updateButton"
+                        class="btn btn-success"
+                        disabled>
                     Update Product
                 </button>
             </div>
 
-            <div id="updateMessage" class="mt-3" role="status" aria-live="polite"></div>
+            <div id="updateMessage"
+                 class="mt-3"
+                 role="status"
+                 aria-live="polite"></div>
+
         </section>
 
+        <!-- TEAM TASK 4: SAVED PRODUCTS TABLE
+             Author: Aziz Abilkosimov
+        -->
         <section class="product-section">
+
             <h2>Saved Products</h2>
 
             <div class="table-responsive">
+
                 <table class="table table-striped table-bordered">
+
                     <thead class="table-dark">
                         <tr>
                             <th>Product ID</th>
@@ -236,10 +328,14 @@
 
                     <tbody id="productTableBody">
                         <tr>
-                            <td colspan="4" class="text-center">No products saved yet.</td>
+                            <td colspan="4" class="text-center">
+                                No products saved yet.
+                            </td>
                         </tr>
                     </tbody>
+
                 </table>
+
             </div>
         </section>
 
@@ -261,29 +357,42 @@
 
             let currentProductId = null;
 
+            // Use the same storage key as shoppingcart.html.
             function getProducts() {
                 try {
                     const saved = localStorage.getItem("soccerProducts");
                     const products = saved ? JSON.parse(saved) : {};
 
-                    if (!products || Array.isArray(products) ||
-                        typeof products !== "object") {
+                    if (!products ||
+                        typeof products !== "object" ||
+                        Array.isArray(products)) {
                         return {};
                     }
 
                     return products;
+
                 } catch (error) {
+                    console.error("Error reading products:", error);
                     return {};
                 }
             }
 
             function storeProducts(products) {
                 try {
-                    localStorage.setItem("soccerProducts", JSON.stringify(products));
+                    localStorage.setItem(
+                        "soccerProducts",
+                        JSON.stringify(products)
+                    );
+
                     return true;
+
                 } catch (error) {
-                    showMessage("#formMessage",
-                        "Products could not be saved in this browser.", "danger");
+                    showMessage(
+                        "#formMessage",
+                        "Products could not be saved in this browser.",
+                        "danger"
+                    );
+
                     return false;
                 }
             }
@@ -301,7 +410,9 @@
                     productDesc: $("#productDesc").val().trim(),
                     productCategory: $("#productCategory").val(),
                     productUOM: $("#productUOM").val(),
-                    productPrice: Number(Number($("#productPrice").val()).toFixed(2))
+                    productPrice: Number(
+                        Number($("#productPrice").val()).toFixed(2)
+                    )
                 };
 
                 const weight = $("#productWeight").val().trim();
@@ -314,14 +425,12 @@
             }
 
             function displayProduct(product) {
-                $("#jsonOutput").text(JSON.stringify(product, null, 4));
+                $("#jsonOutput").text(
+                    JSON.stringify(product, null, 4)
+                );
             }
 
-            /*
-                TEAM TASK 4: SAVED PRODUCTS TABLE
-                Author: Aziz Abilkosimov
-                Contribution: Product table rendering and quality testing.
-            */
+            // Correctly render the saved products table.
             function renderProductTable() {
                 const products = getProducts();
                 const ids = Object.keys(products);
@@ -338,6 +447,7 @@
                             }).text("No products saved yet.")
                         )
                     );
+
                     return;
                 }
 
@@ -345,11 +455,22 @@
                     const product = products[id];
                     const $row = $("<tr>");
 
-                    row.append(("<td>").text(product.productId));
-                    row.append(("<td>").text(product.productDesc));
-                    row.append(("<td>").text(product.productCategory));
                     $row.append(
-                        ("<td>").text("" + Number(product.productPrice).toFixed(2))
+                        $("<td>").text(product.productId || id)
+                    );
+
+                    $row.append(
+                        $("<td>").text(product.productDesc || "")
+                    );
+
+                    $row.append(
+                        $("<td>").text(product.productCategory || "")
+                    );
+
+                    $row.append(
+                        $("<td>").text(
+                            "$" + Number(product.productPrice).toFixed(2)
+                        )
                     );
 
                     tableBody.append(row);
@@ -359,14 +480,18 @@
             function validateRequiredText(id) {
                 const $field = $("#" + id);
                 const valid = $field.val().trim() !== "";
+
                 $field.toggleClass("is-invalid", !valid);
+
                 return valid;
             }
 
             function validateRequiredSelect(id) {
                 const $field = $("#" + id);
                 const valid = $field.val() !== "";
+
                 $field.toggleClass("is-invalid", !valid);
+
                 return valid;
             }
 
@@ -383,6 +508,7 @@
                     /^\d+(\.\d{1,2})?$/.test(value);
 
                 $field.toggleClass("is-invalid", !valid);
+
                 return valid;
             }
 
@@ -390,7 +516,8 @@
                 const $field = $("#productWeight");
                 const value = $field.val().trim();
 
-                const valid = value === "" ||
+                const valid =
+                    value === "" ||
                     (
                         Number.isFinite(Number(value)) &&
                         Number(value) >= 0 &&
@@ -398,6 +525,7 @@
                     );
 
                 $field.toggleClass("is-invalid", !valid);
+
                 return valid;
             }
 
@@ -409,21 +537,33 @@
                 const validPrice = validatePrice();
                 const validWeight = validateWeight();
 
-                return validId && validDescription && validCategory &&
-                    validUOM && validPrice && validWeight;
+                return validId &&
+                    validDescription &&
+                    validCategory &&
+                    validUOM &&
+                    validPrice &&
+                    validWeight;
             }
 
-            $("#productForm input, #productForm select").on("input change", function () {
-                $(this).removeClass("is-invalid");
-                $("#formMessage").text("");
-            });
+            $("#productForm input, #productForm select").on(
+                "input change",
+                function () {
+                    $(this).removeClass("is-invalid");
+                    $("#formMessage").text("");
+                }
+            );
 
+            // Save a new product or replace an existing product with the same ID.
             $("#productForm").on("submit", function (event) {
                 event.preventDefault();
 
                 if (!validateProductForm()) {
-                    showMessage("#formMessage",
-                        "Please correct the highlighted fields.", "danger");
+                    showMessage(
+                        "#formMessage",
+                        "Please correct the highlighted fields.",
+                        "danger"
+                    );
+
                     return;
                 }
 
@@ -431,7 +571,9 @@
                 const products = getProducts();
                 const id = product.productId;
 
-                const alreadyExists = Object.prototype.hasOwnProperty.call(products, id);
+                const alreadyExists =
+                    Object.prototype.hasOwnProperty.call(products, id);
+
                 products[id] = product;
 
                 if (!storeProducts(products)) {
@@ -439,7 +581,9 @@
                 }
 
                 currentProductId = id;
+
                 displayProduct(product);
+
                 $("#updateButton").prop("disabled", false);
 
                 showMessage(
@@ -451,9 +595,11 @@
                 );
 
                 $("#updateMessage").text("");
+
                 renderProductTable();
             });
 
+            // Search for a product using its exact ID.
             $("#searchForm").on("submit", function (event) {
                 event.preventDefault();
 
@@ -461,15 +607,28 @@
                 const products = getProducts();
 
                 if (id === "") {
-                    showMessage("#searchMessage", "Enter a Product ID.", "danger");
+                    showMessage(
+                        "#searchMessage",
+                        "Enter a Product ID.",
+                        "danger"
+                    );
+
                     return;
                 }
 
                 if (!Object.prototype.hasOwnProperty.call(products, id)) {
                     currentProductId = null;
+
                     $("#updateButton").prop("disabled", true);
-                    showMessage("#searchMessage", "No product found with that ID.", "danger");
+
+                    showMessage(
+                        "#searchMessage",
+                        "No product found with that ID.",
+                        "danger"
+                    );
+
                     $("#updateMessage").text("");
+
                     return;
                 }
 
@@ -479,57 +638,90 @@
                 $("#productDesc").val(product.productDesc);
                 $("#productCategory").val(product.productCategory);
                 $("#productUOM").val(product.productUOM);
-                $("#productPrice").val(Number(product.productPrice).toFixed(2));
+
+                $("#productPrice").val(
+                    Number(product.productPrice).toFixed(2)
+                );
+
                 $("#productWeight").val(
-                    product.productWeight === undefined ? "" : product.productWeight
+                    product.productWeight === undefined
+                        ? ""
+                        : product.productWeight
                 );
 
                 $("#productForm .is-invalid").removeClass("is-invalid");
 
                 currentProductId = id;
+
                 displayProduct(product);
+
                 $("#updateButton").prop("disabled", false);
 
-                showMessage("#searchMessage",
+                showMessage(
+                    "#searchMessage",
                     "Product found. Edit the details and select Update Product.",
-                    "success");
+                    "success"
+                );
 
                 $("#formMessage").text("");
                 $("#updateMessage").text("");
             });
 
+            // Update an existing product.
             $("#updateButton").on("click", function () {
                 if (currentProductId === null) {
-                    showMessage("#updateMessage",
-                        "Search for a saved product before updating.", "danger");
+                    showMessage(
+                        "#updateMessage",
+                        "Search for a saved product before updating.",
+                        "danger"
+                    );
+
                     return;
                 }
 
                 if (!validateProductForm()) {
-                    showMessage("#updateMessage",
-                        "Correct the highlighted fields before updating.", "danger");
+                    showMessage(
+                        "#updateMessage",
+                        "Correct the highlighted fields before updating.",
+                        "danger"
+                    );
+
                     return;
                 }
 
                 const product = getProductFromForm();
                 const products = getProducts();
 
-                if (!Object.prototype.hasOwnProperty.call(products, currentProductId)) {
-                    showMessage("#updateMessage",
-                        "The original product could not be found. Search again.", "danger");
+                if (!Object.prototype.hasOwnProperty.call(
+                    products,
+                    currentProductId
+                )) {
+                    showMessage(
+                        "#updateMessage",
+                        "The original product could not be found. Search again.",
+                        "danger"
+                    );
+
                     return;
                 }
 
                 const newId = product.productId;
 
-                if (newId !== currentProductId &&
-                    Object.prototype.hasOwnProperty.call(products, newId)) {
-                    showMessage("#updateMessage",
-                        "That Product ID already belongs to another product.", "danger");
+                if (
+                    newId !== currentProductId &&
+                    Object.prototype.hasOwnProperty.call(products, newId)
+                ) {
+                    showMessage(
+                        "#updateMessage",
+                        "That Product ID already belongs to another product.",
+                        "danger"
+                    );
+
                     return;
                 }
 
                 delete products[currentProductId];
+
                 products[newId] = product;
 
                 if (!storeProducts(products)) {
@@ -537,15 +729,26 @@
                 }
 
                 currentProductId = newId;
+
                 $("#searchProductId").val(newId);
 
                 displayProduct(product);
                 renderProductTable();
 
-                showMessage("#updateMessage", "Product updated successfully.", "success");
-                showMessage("#formMessage", "The product changes have been saved.", "success");
+                showMessage(
+                    "#updateMessage",
+                    "Product updated successfully.",
+                    "success"
+                );
+
+                showMessage(
+                    "#formMessage",
+                    "The product changes have been saved.",
+                    "success"
+                );
             });
 
+            // Display products already saved in this browser.
             renderProductTable();
         });
     </script>
