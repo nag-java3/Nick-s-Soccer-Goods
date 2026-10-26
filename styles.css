@@ -1,14 +1,17 @@
-/* =========================================
-EXTERNAL CSS
-Nick's Soccer Goods
-Bootstrap Exercise
-========================================= */
-
 
 /* =========================================
-BASIC PAGE STYLING
-========================================= */
+   EXTERNAL CSS
+   Nick's Soccer Goods
+   ========================================= */
 
+/*
+   TEAM TASK 2: CSS PAGE STYLE AND COSMETICS
+   Author: Nick Golter
+   Contribution: Colors, typography, layout, product cards,
+   spacing, and responsive styling.
+*/
+
+/* BASIC PAGE STYLING */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -16,11 +19,7 @@ body {
     color: #222;
 }
 
-
-/* =========================================
-BOOTSTRAP NAVBAR
-========================================= */
-
+/* NAVIGATION */
 .navbar {
     background-color: #222 !important;
 }
@@ -38,11 +37,7 @@ BOOTSTRAP NAVBAR
     color: #8be28f !important;
 }
 
-
-/* =========================================
-HEADER / JUMBOTRON
-========================================= */
-
+/* HEADER */
 header {
     background-color: #f8f9fa !important;
     color: #222 !important;
@@ -61,22 +56,14 @@ header p {
     color: #222 !important;
 }
 
-
-/* =========================================
-MAIN CONTENT
-========================================= */
-
+/* MAIN CONTENT */
 main {
     width: 90%;
     max-width: 1000px;
     margin: 20px auto;
 }
 
-
-/* =========================================
-SECTIONS
-========================================= */
-
+/* CONTENT SECTIONS */
 section {
     background-color: white;
     padding: 25px;
@@ -84,48 +71,22 @@ section {
     border-radius: 8px;
 }
 
-
-/* =========================================
-SECTION HEADINGS
-========================================= */
-
 section h2 {
     color: #176b2c;
 }
 
-
-/* =========================================
-IMAGES
-========================================= */
-
-img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 6px;
-}
-
-
-/* Bootstrap responsive images */
-
+/* IMAGES */
+img,
 .img-fluid {
     max-width: 100%;
     height: auto;
     border-radius: 6px;
 }
 
-
-/* =========================================
-PRODUCTS
-========================================= */
-
+/* PRODUCT SECTION */
 #products {
     text-align: center;
 }
-
-
-/* =========================================
-PRODUCT ARTICLES
-========================================= */
 
 article {
     background-color: #f1f8f2;
@@ -141,18 +102,11 @@ article h3 {
     color: #176b2c;
 }
 
-
-/* Add spacing between product cards */
-
 #products .col-md-4 {
     margin-bottom: 20px;
 }
 
-
-/* =========================================
-ASIDE / SPECIAL OFFER
-========================================= */
-
+/* SPECIAL OFFER */
 aside {
     background-color: white;
     padding: 20px;
@@ -164,11 +118,6 @@ aside h2 {
     color: #176b2c;
 }
 
-
-/* =========================================
-SPECIAL OFFER
-========================================= */
-
 .special-offer {
     background-color: #e8f5e9;
     color: #176b2c;
@@ -176,20 +125,12 @@ SPECIAL OFFER
     text-align: center;
 }
 
-
-/* =========================================
-CONTACT
-========================================= */
-
+/* CONTACT */
 #contact {
     text-align: center;
 }
 
-
-/* =========================================
-FOOTER
-========================================= */
-
+/* FOOTER */
 footer {
     background-color: #222 !important;
     color: white;
@@ -202,22 +143,13 @@ footer p {
     margin-bottom: 5px;
 }
 
-
-/* =========================================
-BOOTSTRAP CONTAINER ADJUSTMENTS
-========================================= */
-
+/* BOOTSTRAP CONTAINER */
 .container {
     max-width: 1000px;
 }
 
-
-/* =========================================
-MOBILE SCREEN
-========================================= */
-
+/* MOBILE RESPONSIVENESS */
 @media (max-width: 700px) {
-
     main {
         width: 95%;
     }
@@ -241,6 +173,6 @@ MOBILE SCREEN
     .navbar-brand {
         font-size: 18px;
     }
-
 }
+
 
